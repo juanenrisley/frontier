@@ -1,0 +1,16 @@
+{
+  "name": "@frontier/core",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@frontier/protos": "0.0.1",
+    "@grpc/proto-loader": "0.1.0",
+    "grpc": "1.11.0"
+  },
+  "devDependencies": {
+  },
+  "optionalDependencies": {
+    "yarn": "1.19.1"
+  }
+}

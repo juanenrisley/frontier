@@ -1,0 +1,19 @@
+{
+  "name": "frontier",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:core": "yarn workspace @babou/core run build"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "optionalDependencies": {
+    "yarn": "1.19.1"
+  }
+}
