@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "license": "UNLICENSED",
   "private": true,
+  "main": "src/index.js",
   "dependencies": {
     "@frontier/protos": "0.0.1",
     "@grpc/proto-loader": "0.1.0",
