@@ -1,0 +1,11 @@
+{
+  "name": "@frontier/proto-keeper",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "src/index.js",
+  "dependencies": {
+    "@grpc/proto-loader": "0.5.3",
+    "grpc": "1.24.2"
+  }
+}

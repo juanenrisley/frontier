@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package protos;
+
+service ProtoService {
+  rpc GetProto (Proto) returns (Proto);
+}
+
+message Proto {
+  string name = 1;
+  string content = 2;
+}
