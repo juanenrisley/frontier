@@ -4,9 +4,11 @@ package protos;
 
 service ProtoService {
   rpc GetProto (Proto) returns (Proto);
+  rpc UpdateProto (Proto) returns (Proto);
 }
 
 message Proto {
   string name = 1;
-  string content = 2;
+  string version = 2;
+  string content = 3;
 }
