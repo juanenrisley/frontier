@@ -1,0 +1,14 @@
+{
+  "name": "@frontier/proto-keeper-client",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "main": "src/index.js",
+  "repository": "https://github.com/juanenrisley/frontier.git",
+  "scripts": {
+    "upload": "npm login && npm publish"
+  },
+  "dependencies": {
+    "@grpc/proto-loader": "0.5.3",
+    "grpc": "1.24.2"
+  }
+}

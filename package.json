@@ -7,7 +7,6 @@
     "packages/*"
   ],
   "scripts": {
-    "build:core": "yarn workspace @babou/core run build"
   },
   "dependencies": {
   },
