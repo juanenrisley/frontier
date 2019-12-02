@@ -1,5 +1,5 @@
 import {mongoConfiguration} from "./configuration/mongoConfiguration";
-import {protoDefinitionRepository} from "./repository/protoDefinition";
+import {getProto, updateProtoVersion} from "./repository/protoRepository";
 
 const fs = require('fs');
 const grpc = require('grpc');
@@ -14,7 +14,7 @@ const options = {
     defaults: true,
     oneofs: true,
 };
-const packageDefinition = protoLoader.loadSync(`${__dirname}/protos.proto`, options);
+const packageDefinition = protoLoader.loadSync(`${__dirname}/protos/keeper.proto`, options);
 const packageObject = grpc.loadPackageDefinition(packageDefinition);
 const server = new grpc.Server();
 
@@ -23,11 +23,11 @@ require.extensions['.proto'] = (module, filename) => {
 };
 
 server.addService(packageObject.protos.ProtoService.service, {
-    getProto: (call, callback) => {
-        callback(null, protoDefinitionRepository.getProto(call.request.name, call.request.version));
+    getProto: async (call, callback) => {
+        callback(null, await getProto(call.request.name, call.request.version));
     },
-    updateProto: (call, callback) => {
-        callback(null, protoDefinitionRepository.updateProtoVersion(call.request));
+    updateProto: async (call, callback) => {
+        callback(null, await updateProtoVersion(call.request));
     },
 });
 
