@@ -1,5 +1,6 @@
 # IDEs
 .idea
+.iml
 
 # Packages
 node_modules
