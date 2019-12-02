@@ -4,8 +4,12 @@
   "license": "UNLICENSED",
   "private": true,
   "main": "src/index.js",
+  "scripts": {
+    "start": "node -r esm src/index.js"
+  },
   "dependencies": {
     "@grpc/proto-loader": "0.5.3",
+    "esm": "^3.2.25",
     "grpc": "1.24.2",
     "mongoose": "5.7.13"
   }
