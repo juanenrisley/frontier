@@ -10,7 +10,7 @@ export const updateProtoVersion = async (proto) => {
     }
 
     return {name: protoSaved.name, version: protoSaved.version, content:protoSaved.content};
-}
+};
 
 export const getProto = (name, version) => {
     return Proto.findOne({name, version}).lean();
