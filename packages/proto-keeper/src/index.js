@@ -1,17 +1,12 @@
 import {mongoConfiguration} from "./configuration/mongoConfiguration";
 import {getProto, updateProtoVersion} from "./repository/protoRepository";
 
-const fs = require('fs');
 const grpc = require('grpc');
 const {proto} = require('@frontier/proto-keeper-client');
 
 mongoConfiguration();
 
 const server = new grpc.Server();
-
-require.extensions['.proto'] = (module, filename) => {
-    module.exports = fs.readFileSync(filename, 'utf8');
-};
 
 server.addService(proto.ProtoService.service, {
     getProto: async (call, callback) => {

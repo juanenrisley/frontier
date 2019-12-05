@@ -1,0 +1,17 @@
+{
+  "name": "@frontier/users",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node -r esm src/index.js"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "@frontier/proto-keeper-client": "0.1.0",
+    "esm": "^3.2.25",
+    "grpc": "1.24.2",
+    "mongoose": "5.7.13"
+  }
+}

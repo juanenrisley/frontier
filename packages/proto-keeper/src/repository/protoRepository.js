@@ -1,6 +1,6 @@
 import {Proto} from "../model/protoDefinition";
 
-export const updateProtoVersion = async (proto) => {
+const updateProtoVersion = async (proto) => {
 
     let protoSaved = await this.getProto(proto.name, proto.version);
 
@@ -12,7 +12,11 @@ export const updateProtoVersion = async (proto) => {
     return {name, version, content};
 };
 
-export const getProto = (name, version) => {
+const getProto = (name, version) => {
     return Proto.findOne({name, version}).lean();
 };
 
+module.exports = {
+    updateProtoVersion,
+    getProto
+};
