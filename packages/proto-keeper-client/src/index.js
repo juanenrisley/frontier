@@ -11,7 +11,10 @@ const packageDefinition = protoLoader.loadSync(
     defaults: true,
     oneofs: true
   });
-const protos = grpc.loadPackageDefinition(packageDefinition).protos;
-const Client = (host) => new protos.ProtoService(host, grpc.credentials.createInsecure());
+const proto = grpc.loadPackageDefinition(packageDefinition).protos;
+const Client = (host) => new proto.ProtoService(host, grpc.credentials.createInsecure());
 
-module.exports = Client;
+module.exports = {
+    Client,
+    proto
+};
