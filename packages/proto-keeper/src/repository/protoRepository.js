@@ -6,10 +6,10 @@ export const updateProtoVersion = async (proto) => {
 
     if (!protoSaved) {
         const protoModel = new Proto(proto);
-        protoSaved = await protoModel.save()
+        protoSaved = await protoModel.save();
     }
-
-    return {name: protoSaved.name, version: protoSaved.version, content:protoSaved.content};
+    const {name, version, content} = protoSaved;
+    return {name, version, content};
 };
 
 export const getProto = (name, version) => {
