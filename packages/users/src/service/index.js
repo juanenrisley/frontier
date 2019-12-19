@@ -5,9 +5,9 @@ export default {
     callback(null, await createUser(call.request));
   },
   getUsers: async (call, callback) => {
-    callback(null, await getUsers());
+    callback(null, {users: await getUsers()});
   },
   getUser: async (call, callback) => {
-    callback(null, await getUser(call.request.id));
+    callback(null, await getUser(call.request._id));
   },
 };

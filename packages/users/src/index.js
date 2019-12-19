@@ -18,7 +18,7 @@ const client = Client('0.0.0.0:50050');
 
 client.updateProto({
   name: 'userProto',
-  version: '0.0.4',
+  version: '0.0.6',
   content: userProto
 }, (error, proto) => {
   if (error) {
