@@ -2,14 +2,16 @@ syntax = "proto3";
 
 package users;
 
-service ProtoService {
-  rpc GetUser (Empty) returns (User);
+service UserService {
+  rpc GetUser (User) returns (User);
   rpc GetUsers (Empty) returns (Users);
+  rpc CreateUser (User) returns (User);
 }
 
 message User {
-  string name = 1;
-  string lastName = 2;
+  string id = 1;
+  string name = 2;
+  string lastName = 3;
 }
 
 message Users {
