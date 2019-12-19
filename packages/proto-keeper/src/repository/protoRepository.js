@@ -16,7 +16,7 @@ const getProto = (name, version) => {
     return Proto.findOne({name, version}).lean();
 };
 
-module.exports = {
+export {
     updateProtoVersion,
     getProto
 };
