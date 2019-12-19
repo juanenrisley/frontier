@@ -1,6 +1,6 @@
 import User from '../model';
 
-const createUser = (user) => {
+const createUser = ({_id, ...user}) => {
   return User.create(user);
 };
 
