@@ -4,7 +4,7 @@ package users;
 
 service ProtoService {
   rpc GetUser (Empty) returns (User);
-  rpc GetUsers ()Empty returns (Users);
+  rpc GetUsers (Empty) returns (Users);
 }
 
 message User {
