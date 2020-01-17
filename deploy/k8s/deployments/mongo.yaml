@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.service.type: LoadBalancer
+    kompose.version: 1.17.0 (a74acad)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: mongo
+  name: mongo
+spec:
+  replicas: 3
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: mysql
+    spec:
+      containers:
+        - image: mongo:latest
+          name: mongo
+          envFrom:
+            - configMapRef:
+                name: dev-db-config
+          ports:
+            - containerPort: 27017
+          resources: {}
+          volumeMounts:
+            - mountPath: "/var/lib/mongo"
+              name: mongo-pv
+      volumes:
+        - name: mongo-pv
+          persistentVolumeClaim:
+            claimName: mongo-pvc
+      restartPolicy: Always
+status: {}

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dev-db-config
+data:
+  MYSQL_ROOT_PASSWORD: "frontier"
+  MYSQL_USER: "frontier"
+  MYSQL_PASSWORD: "frontier"
+  MYSQL_DATABASE: "frontier"
