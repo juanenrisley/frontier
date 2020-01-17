@@ -10,6 +10,9 @@ metadata:
     io.kompose.service: mongo
   name: mongo
 spec:
+  selector:
+    matchLabels:
+      app: mongo
   replicas: 3
   strategy: {}
   template:
@@ -18,9 +21,6 @@ spec:
       labels:
         io.kompose.service: mysql
     spec:
-      selector:
-        matchLabels:
-          app: mongo
       containers:
         - image: mongo:latest
           name: mongo

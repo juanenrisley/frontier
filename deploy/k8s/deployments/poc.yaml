@@ -10,6 +10,9 @@ metadata:
     io.kompose.service: poc
   name: poc
 spec:
+  selector:
+    matchLabels:
+      app: poc
   replicas: 3
   strategy: {}
   template:
@@ -18,9 +21,6 @@ spec:
       labels:
         io.kompose.service: poc
     spec:
-      selector:
-        matchLabels:
-          app: poc
       containers:
         - image: amartlop/poc:latest
           name: poc
