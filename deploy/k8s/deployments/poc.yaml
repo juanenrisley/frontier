@@ -17,3 +17,6 @@ spec:
           name: poc
           ports:
             - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: poc-config
