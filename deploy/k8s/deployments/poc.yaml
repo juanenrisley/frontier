@@ -4,6 +4,11 @@ metadata:
   name: poc
 spec:
   replicas: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 9
+      maxSurge: 1
   selector:
     matchLabels:
       app: poc
@@ -12,11 +17,6 @@ spec:
       labels:
         app: poc
     spec:
-      strategy:
-        type: RollingUpdate
-        rollingUpdate:
-          maxUnavailable: 9
-          maxSurge: 1
       containers:
         - image: amartlop/poc:latest
           name: poc
