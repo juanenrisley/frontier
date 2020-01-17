@@ -1,25 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: kompose convert
-    kompose.service.type: LoadBalancer
-    kompose.version: 1.17.0 (a74acad)
-  creationTimestamp: null
-  labels:
-    io.kompose.service: mongo
   name: mongo
 spec:
-  selector:
-    matchLabels:
-      app: mongo
   replicas: 3
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        io.kompose.service: mysql
+        app: mongo
     spec:
       containers:
         - image: mongo:latest
