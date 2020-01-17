@@ -16,4 +16,4 @@ spec:
         - image: amartlop/poc:latest
           name: poc
           ports:
-            - containerPort: 27017
+            - containerPort: 3000
