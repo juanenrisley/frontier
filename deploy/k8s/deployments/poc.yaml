@@ -18,6 +18,9 @@ spec:
       labels:
         io.kompose.service: poc
     spec:
+      selector:
+        matchLabels:
+          app: poc
       containers:
         - image: amartlop/poc:latest
           name: poc

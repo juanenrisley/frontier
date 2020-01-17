@@ -18,6 +18,9 @@ spec:
       labels:
         io.kompose.service: mysql
     spec:
+      selector:
+        matchLabels:
+          app: mongo
       containers:
         - image: mongo:latest
           name: mongo
