@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: poc
 spec:
-  replicas: 3
+  replicas: 10
   selector:
     matchLabels:
       app: poc
@@ -12,6 +12,11 @@ spec:
       labels:
         app: poc
     spec:
+      strategy:
+        type: RollingUpdate
+        rollingUpdate:
+          maxUnavailable: 9
+          maxSurge: 1
       containers:
         - image: amartlop/poc:latest
           name: poc
@@ -20,3 +25,5 @@ spec:
           envFrom:
             - configMapRef:
                 name: poc-config
+            - configMapRef:
+                name: poc-common-config
