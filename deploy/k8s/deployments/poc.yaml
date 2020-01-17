@@ -4,10 +4,8 @@ metadata:
   name: poc
 spec:
   replicas: 3
-  template:
-    metadata:
-      labels:
-        app: poc
+  selector:
+    matchLabels:
     spec:
       containers:
         - image: amartlop/poc:latest
